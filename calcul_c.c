@@ -6,7 +6,7 @@
 double * C_computation (int m, int n, double * x, double **A )
 {
 
-// Déclaration des variables 
+// Déclaration des variables et allocation mémoire
 
  double *res= malloc((2*m)*sizeof(double));
  double *y0=malloc((n)*sizeof(double));
@@ -30,8 +30,17 @@ y1=mat_vec(A,y0,n);
  for (int k=1; k<=m-1 ; k++){
 res[2*k-1]= produit_scalaire (y1,y0,n);
 res[2*k]= produit_scalaire (y1,y1,n);
+y0=y1;
+y1=mat_vec(A,y0,n);
 
 } // end for
+res[2*m-1]=produit_scalaire (y1,y0,n);
 
 return res;
+
+// Libérer la mémoire 
+free(res);
+free(y0);
+free(y1);
+
 } // fin fonction  

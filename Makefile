@@ -1,11 +1,11 @@
 compiler = gcc -g
-cflags = -std=c99 -lm -llapacke -llapack -lblas
+cflags = -std=c99 -lm  -llapack -lblas
 
 headers = $(wildcard *.h)
 sources = $(wildcard *.c)
 objects = $(sources:.c=.o)
 
-executables: gmres
+executables: main
 
 %.o: %.c $(headers)
 	$(compiler) -c -o $@ $< $(cflags)
@@ -13,7 +13,9 @@ executables: gmres
 arnoldi: $(objects)
 	$(compiler) -o $@ $^ $(cflags)
 
-gmres: $(objects)
+main: $(objects)
 	$(compiler) -o $@ $^ $(cflags)
 clean:
-	rm -f gmres arnoldi *.o
+	rm -f main 
+
+mrproper: clean
