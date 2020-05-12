@@ -13,7 +13,7 @@ int *ipiv=malloc(n*sizeof(int));
 LAPACK_dgetri(&n,  A,&lda,ipiv,work,&lwork,&info); 
 //printf("work: %f\n",work[0]);
 free(work); free(ipiv);
-printf("info inverse matrice: %d\n",info);
+//printf("info inverse matrice: %d\n",info);
 }
 
 /*int main(){
