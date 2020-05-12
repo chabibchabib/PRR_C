@@ -30,7 +30,7 @@ void val_vec_propre(double *B, int n, double *wr, double *wi, double *vr){
 	free(vl);free(scale);free(rconde);free(rcondv);free(iwork);free(work);
 }
 /*int main(){
-int n=3;
+int n=2;
 double *A=malloc(n*n*sizeof(double));
 for(int i=0; i<n*n;i++) scanf("%lf", &A[i]);
 double *wr=calloc(n,sizeof(double));

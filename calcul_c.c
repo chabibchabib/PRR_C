@@ -24,14 +24,14 @@ y0[i]=x[i]/norme;
 res[0]=1;
 
 // calcul y1;
-y1=mat_vec(A,y0,n);
+y1=mat_vec(A,y0,n,n);
 
 // Boucle
  for (int k=1; k<=m-1 ; k++){
 res[2*k-1]= produit_scalaire (y1,y0,n);
 res[2*k]= produit_scalaire (y1,y1,n);
 y0=y1;
-y1=mat_vec(A,y0,n);
+y1=mat_vec(A,y0,n,n);
 
 } // end for
 res[2*m-1]=produit_scalaire (y1,y0,n);

@@ -14,7 +14,7 @@ Vm[i][0]=x[i];
 for (int j =1; j<m;j++){
 for (int i =0; i<n;i++){Ax[i]=Vm[i][j-1];}
 
-tmp=mat_vec(A,Ax,n);
+tmp=mat_vec(A,Ax,n,n);
 for (int i =0; i<n;i++){Vm[i][j]=tmp[i];}   
 
 }
