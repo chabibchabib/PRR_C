@@ -21,7 +21,8 @@ double *vr=malloc(m*m*sizeof(double));
 //tab_M=lineariser_matrice( M,m,m);
 tab_M=lineariser_matrice( bmcm,m,m);
 val_vec_propre(tab_M,m,wr,wi,vr);
-for (int i=0; i<m*m ; i++) printf("\t %f",vr[i]);
+
+//for (int i=0; i<m*m ; i++) printf("\t %f",vr[i]);
 for (int i=0; i<m ; i++){for (int j =0 ; j<m ; j++) res[j][i]=vr[i*m+j];}
 for (int i=0; i<m ; i++) res[i][m]=wr[i];
 return (res);

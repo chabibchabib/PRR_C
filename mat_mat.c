@@ -5,7 +5,7 @@
 #include "header.h"
 // mult mat (nxm) et mat (mxr)
 void mat_mat(double **A, double **B, double **C, int n,int m, int r ){ 
-double *col=malloc(n*sizeof(double));
+double *col=malloc(m*sizeof(double));
 double *res=malloc(n*sizeof(double));
 for (int cpt=0; cpt<r;cpt++){
 	for (int i =0;i<m;i++)  col[i]=B[i][cpt];

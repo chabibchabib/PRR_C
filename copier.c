@@ -9,7 +9,7 @@ double ** copier( double **A, int n, int m){
 double ** res=malloc(n*sizeof(double*));
 for (int i=0; i<n ; i++) res[i]=malloc(m*sizeof(double));
 for (int i=0; i<n ; i++){
-for (int j=0; j<n ; j++){ res[i][j]=A[i][j];
+for (int j=0; j<m ; j++){ res[i][j]=A[i][j];
 }
 }
 return res;

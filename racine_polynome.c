@@ -7,6 +7,7 @@
 void racine_polynome(double *b, int m, double **racines ){
 double *H=calloc(m*m,sizeof(double));
 matrice_companion(b, m,H);
+afficher_tableau(H,m*m);
 double *wr=calloc(m,sizeof(double));
  double *wi=calloc(m,sizeof(double));
 double *vr=calloc(m*m,sizeof(double));
