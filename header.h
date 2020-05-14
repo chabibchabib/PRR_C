@@ -32,6 +32,12 @@ double **vecteur_ritz(double ** bmcm, double **Vm, int n,int m );
 double norme_vec(double *tab, int n);
 void sort(double *t, int n );
 //double erreur_check(double **A, double ** res, int n, int m);
-double erreur_check(double **A, double ** res,double *lambda, int n, int m);
+double erreur_check(double **A, double ** res,double *lambda, int n, int r, int *ind);
 double ** copier( double **A, int n, int m);
-void PRR(int n, int m , int r, double **A,double **vec, double **val, double *x );
+void PRR(int n, int m , int r, double **A,double **vec, double *val, double *x );
+int *tri(double *tab, int m,int r);
+void sortInsert(double* t, double* tt, double* v, int n);
+
+
+
+

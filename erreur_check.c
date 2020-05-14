@@ -11,10 +11,10 @@ norme=sqrt(norme);
 return norme; 
 }
 
-double erreur_check(double **A, double ** res,double *lambda, int n, int m){
+double erreur_check(double **A, double ** res,double *lambda, int n, int r, int *ind){
 double ** Id= malloc(n*sizeof(double*));
 for(int i=0; i<n;i++) Id[i]= malloc(n*sizeof(double));
- double *tab=malloc(m*sizeof(double));
+ double *tab=malloc(r*sizeof(double));
 //for(int i=0; i<n;i++) tab[i]=res[i][m];
 double ** Li= malloc(n*sizeof(double*));
 for(int i=0; i<n;i++) Li[i]= malloc(n*sizeof(double));
@@ -28,11 +28,11 @@ if (i==j) Id[i][j]=1;
 }}
 
 
-for (int i=0 ; i<m ; i++){
-mat_scal(Id, -lambda[i], Li,n);
+for (int i=0 ; i<r ; i++){
+mat_scal(Id, -lambda[ind[i]], Li,n);
 add_matrice(A,Li ,M,n);
 //afficher_matrice(M,n,n);
-for (int k=0;k<n; k++) tmp[k]=res[k][i];
+for (int k=0;k<n; k++) tmp[k]=res[k][ind[i]];
 tmp2=mat_vec(M,tmp,n,n);
 //afficher_tableau( tmp2, n );
 tab[i]=norme_vec(tmp2,n);

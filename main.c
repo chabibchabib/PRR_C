@@ -8,8 +8,9 @@ int main(){
 
 int n =4 ;int  m=2; int r=1;
 double *x=calloc(n,sizeof(double));
-double **val= malloc(m*sizeof(double*));
-for (int i=0;i<m;i++) val[i]=malloc(2*sizeof(double));
+//double **val= malloc(m*sizeof(double*));
+//for (int i=0;i<m;i++) val[i]=malloc(2*sizeof(double));
+double *val= malloc(m*sizeof(double));
 double **vec= malloc(n*sizeof(double*));
 for (int i=0;i<n;i++) vec[i]=malloc(m*sizeof(double));
 double **A= malloc(n*sizeof(double*));
@@ -32,7 +33,7 @@ PRR(n,  m ,  r, A,vec, val, x );
 printf("apres prr\n");
 //
 free(x);
-for (int i=0; i<m ; i++) free(val[i]);
+//for (int i=0; i<m ; i++) free(val[i]);
 free(val);
 for (int i=0; i<n ; i++) free(vec[i]);
 free(vec);
