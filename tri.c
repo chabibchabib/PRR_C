@@ -3,9 +3,11 @@
 #include<math.h>
 #include "header.h"
 // fonction tri pour trier un tableau de double de taille m;
-int *tri( double *tab, int m, int r){
+int *tri( double *t, int m, int r){
 int *ind=malloc(m*sizeof(int));
 int *res=malloc(r*sizeof(int));
+double *tab=malloc(m*sizeof(double));
+for (int i =0; i<m ; i++ ) tab[i]=t[i];
  double aide,max =0.0;
   int PMAX,p;
 for( int i=0;i<m;i++) ind[i]=i;
@@ -26,9 +28,10 @@ for (int i=0; i<r; i++) res[i]=ind[i];
 return res;
 free(res);
 free(ind);
+free(tab);
 }
 
-/*int main(){ int m=5; int r=5;
+/*int main(){ int m=2; int r=1;
 double *tab=malloc(m*sizeof(double));
 int *ind=malloc(r*sizeof(int));
 for (int i=0; i<m;i++){ scanf("%lf",&tab[i]);}

@@ -11,7 +11,7 @@ int *tab=calloc(m,sizeof(int));
 	LAPACK_dgetrf(&m,&m,A,&lda,tab,&info);
 	char trans='N'; int ldb=m;
 	LAPACK_dgetrs(&trans,&m,&NRHS,A,&lda,tab,b,&ldb,&info);
- printf("info resolution= %d\n",info);
+// printf("info resolution= %d\n",info);
 //afficher_tableau(b,m);
 	free(tab);
 }

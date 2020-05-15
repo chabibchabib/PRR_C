@@ -16,7 +16,7 @@ double * construction_vecteur(double *c, int m); // Construction de la matrice b
 void resolution_systeme(double *A, int m, double *b,int NRHS); // Fonction pour résoudre le SYSTEME
 void matrice_companion(double *b,int m, double *H);      // Matrice companion d'un polynome 
 void val_vec_propre(double *B, int n, double *wr, double *wi, double *vr);  // vecteurs propres 
-void racine_polynome(double *b, int m, double **racines );  // Polynomes 
+void racine_polynome(double *b, int m, double *racines );  // Polynomes 
 void transpose(double **A, int m, int n, double **At); // transpose matrice
 void mat_mat(double **A, double **B, double **C, int n, int m,int r); // produit matrice matrice 
 void mat_scal(double **A, double lambda, double ** C, int n ); // Produit matrice scalaire 
@@ -37,6 +37,7 @@ double ** copier( double **A, int n, int m);
 void PRR(int n, int m , int r, double **A,double **vec, double *val, double *x );
 int *tri(double *tab, int m,int r);
 void sortInsert(double* t, double* tt, double* v, int n);
+void normaliser_matrice_colonne(double **vec, int n, int r);
 
 
 

@@ -7,8 +7,11 @@ void calcul_Vm(double **A, double **Vm, double *x, int n, int m ){
 double *tmp=malloc(n*sizeof(double));
 double *Ax=malloc(n*sizeof(double));
 // initialisation 
+double norme=0.0;
+for(int i=0; i<n;i++) norme+=x[i]*x[i];
+norme=sqrt(norme);
 for (int i =0; i<n;i++){
-Vm[i][0]=x[i];
+Vm[i][0]=x[i]/norme;
 }
 // V1....Vm-1
 for (int j =1; j<m;j++){

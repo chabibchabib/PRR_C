@@ -30,8 +30,6 @@ A[2][0]=-2;A[2][1]=-3;A[2][2]=7;A[2][3]=-1;A[3][0]=1;A[3][1]=-2;A[3][2]=-1;A[3][
 // PRR
 PRR(n,  m ,  r, A,vec, val, x );
 
-printf("apres prr\n");
-//
 free(x);
 //for (int i=0; i<m ; i++) free(val[i]);
 free(val);

@@ -4,7 +4,7 @@
 #include<lapacke.h>
 #include "header.h"
 
-void racine_polynome(double *b, int m, double **racines ){
+void racine_polynome(double *b, int m, double *racines ){
 double *H=calloc(m*m,sizeof(double));
 matrice_companion(b, m,H);
 afficher_tableau(H,m*m);
@@ -13,8 +13,9 @@ double *wr=calloc(m,sizeof(double));
 double *vr=calloc(m*m,sizeof(double));
 val_vec_propre(H,m,wr,wi,vr);
 for(int i=0; i<m;i++){
-racines[i][0]=wr[i];
-racines[i][1]=wi[i];
+//racines[i][0]=wr[i];
+//racines[i][1]=wi[i];
+racines[i]=wr[i];
 }
 //for(int i=0; i<m;i++) printf("racine %d: \n%f+i %f\n",i+1, wr[i],wi[i]);
 
